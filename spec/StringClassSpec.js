@@ -24,7 +24,7 @@ describe ('toLower should', function () {
 describe ('ucFirst should', function () {
   it('return the string with the first letter in uppercase.', function () {
     expect('abani'.ucFirst()).toBe('Abani');
-    expect('lcd'.ucFirst()).toBe('Lcd');
+    expect('Lcd'.ucFirst()).toBe('Lcd');
   });
 });
 
