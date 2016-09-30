@@ -6,7 +6,12 @@ String.prototype.hasVowels = function () {
 
 String.prototype.toUpper = function () {
   return this.replace(/([a-z])/g, function (v) {
-    console.log(typeof v);
     return String.fromCharCode(v.charCodeAt(0)-32);
+  });
+};
+
+String.prototype.toLower = function () {
+  return this.replace(/([A-Z])/g, function (v) {
+    return String.fromCharCode(v.charCodeAt(0)+32);
   });
 };
