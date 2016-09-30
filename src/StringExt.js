@@ -21,3 +21,7 @@ String.prototype.ucFirst = function () {
     return v.toUpper();
   });
 };
+
+String.prototype.isQuestion = function () {
+  return (/(^[^\?]*\?[^\?]*$)(?!\?$)/.test(this)) ? true : false;
+};
