@@ -41,3 +41,9 @@ String.prototype.fromCurrency = function () {
     return this.replace(/[^\d]/, '');
   }
 };
+
+String.prototype.numberWords = function () {
+  return this.replace(/\d/g, function (v) {
+    return numberInWords[parseInt(v)] + " ";
+  });
+};
