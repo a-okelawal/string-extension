@@ -37,7 +37,7 @@ describe ('isQuestion should', function () {
 
 describe ('words should', function () {
   it('return a list of words in a string.', function () {
-    expect('abani is a boy'.words()).toBe(['Abani', 'is', 'a', 'boy']);
+    expect('Abani is a boy'.words()).toEqual(['Abani', 'is', 'a', 'boy']);
   });
 });
 
@@ -55,7 +55,7 @@ describe ('toCurrency should', function () {
 
 describe ('fromCurrency should', function () {
   it('return a number representation of string.', function () {
-    expect('111,111.11'.fromCurrency()).toBe('111111.11');
+    expect('111,111.11'.fromCurrency()).toEqual('111111.11');
   });
 });
 
@@ -80,7 +80,7 @@ describe ('getMiddle should', function () {
 
 describe ('numberWords should', function () {
   it('return the word equivalent of the numbers in the string.', function () {
-    expect('34'.numberWords()).toBe('three four');
+    expect('34'.numberWords()).toBe('three four ');
   });
 });
 
@@ -95,5 +95,6 @@ describe ('doubleCheck should', function () {
   it('return true if the string contains double characters.', function () {
     expect('letting tomi'.doubleCheck()).toBe(true);
     expect('let her'.doubleCheck()).toBe(false);
+    expect('let  her'.doubleCheck()).toBe(false);
   });
 });
