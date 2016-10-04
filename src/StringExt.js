@@ -1,4 +1,6 @@
 'use strict';
+var numberInWords = ['zero', 'one', 'two', 'three', 'four', 'five', 'six',
+ 'seven', 'eight', 'nine'];
 
 String.prototype.hasVowels = function () {
   return /[aeiou]/.test(this) ? true : false;
@@ -24,4 +26,8 @@ String.prototype.ucFirst = function () {
 
 String.prototype.isQuestion = function () {
   return (/(^[^\?]*\?[^\?]*$)(?!\?$)/.test(this)) ? true : false;
+};
+
+String.prototype.words = function () {
+  return (this).replace(/[^a-zA-Z 0-9]/, '').split(' ');
 };
