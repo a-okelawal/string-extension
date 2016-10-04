@@ -35,3 +35,9 @@ String.prototype.words = function () {
 String.prototype.wordCount = function () {
   return ((this).replace(/[^a-zA-Z 0-9]/, '').split(' ')).length;
 };
+
+String.prototype.fromCurrency = function () {
+  if (/\d/.test(this)) {
+    return this.replace(/[^\d]/, '');
+  }
+};
