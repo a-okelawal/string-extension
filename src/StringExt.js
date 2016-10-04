@@ -31,3 +31,7 @@ String.prototype.isQuestion = function () {
 String.prototype.words = function () {
   return (this).replace(/[^a-zA-Z 0-9]/, '').split(' ');
 };
+
+String.prototype.wordCount = function () {
+  return ((this).replace(/[^a-zA-Z 0-9]/, '').split(' ')).length;
+};
