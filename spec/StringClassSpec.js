@@ -50,12 +50,14 @@ describe ('wordCount should', function () {
 describe ('toCurrency should', function () {
   it ('return a currency representation of string.', function () {
     expect('111111.11'.toCurrency()).toBe('111,111.11');
+    expect('1RF,!!!.11'.fromCurrency()).toEqual('String is not in digits.');
   });
 });
 
 describe ('fromCurrency should', function () {
   it ('return a number representation of string.', function () {
     expect('111,111.11'.fromCurrency()).toEqual('111111.11');
+    expect('1RF,!!!.11'.fromCurrency()).toEqual('String is not in digits.');
   });
 });
 
