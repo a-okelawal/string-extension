@@ -53,3 +53,9 @@ String.prototype.inverseCase = function () {
     return /[a-z]/.test(v) ? v.toUpper() : v.toLower();
   });
 };
+
+String.prototype.alternatingCase = function () {
+  return this.replace(/[a-zA-Z]/g, function (cha, index) {
+    return (index%2) === 0 ? cha.toLower() : cha.toUpper();
+  });
+};
