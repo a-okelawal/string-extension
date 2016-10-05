@@ -3,7 +3,7 @@ var numberInWords = ['zero', 'one', 'two', 'three', 'four', 'five', 'six',
  'seven', 'eight', 'nine'];
 
 String.prototype.hasVowels = function () {
-  return /[aeiou]/.test(this) ? true : false;
+  return /[aeiou]/.test(this);
 };
 
 String.prototype.toUpper = function () {
@@ -25,7 +25,7 @@ String.prototype.ucFirst = function () {
 };
 
 String.prototype.isQuestion = function () {
-  return (/(^[^\?]*\?[^\?]*$)(?!\?$)/.test(this)) ? true : false;
+  return (/(^[^\?]*\?[^\?]*$)(?!\?$)/.test(this));
 };
 
 String.prototype.words = function () {
@@ -45,5 +45,11 @@ String.prototype.fromCurrency = function () {
 String.prototype.numberWords = function () {
   return this.replace(/\d/g, function (v) {
     return numberInWords[parseInt(v)] + " ";
+  });
+};
+
+String.prototype.inverseCase = function () {
+  return this.replace(/[a-zA-z]/g, function (v) {
+    return /[a-z]/.test(v) ? v.toUpper() : v.toLower();
   });
 };
