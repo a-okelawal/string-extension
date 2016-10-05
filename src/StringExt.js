@@ -59,3 +59,7 @@ String.prototype.alternatingCase = function () {
     return (index%2) === 0 ? cha.toLower() : cha.toUpper();
   });
 };
+
+String.prototype.isDigit = function () {
+  return /^[\d{1}]$/.test(this);
+};
