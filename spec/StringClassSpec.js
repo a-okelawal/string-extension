@@ -95,6 +95,6 @@ describe ('doubleCheck should', function () {
   it('return true if the string contains double characters.', function () {
     expect('letting tomi'.doubleCheck()).toBe(true);
     expect('let her'.doubleCheck()).toBe(false);
-    expect('let  her'.doubleCheck()).toBe(false);
+    expect('let  her'.doubleCheck()).toBe(true);
   });
 });
