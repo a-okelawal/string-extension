@@ -37,9 +37,8 @@ String.prototype.wordCount = function () {
 };
 
 String.prototype.fromCurrency = function () {
-  if (/\d/.test(this)) {
-    return this.replace(/[^\d]/, '');
-  }
+  return /^\d+(\,\d+\.\d*)?$/g.test(this) ? this.replace(/[^\d]/, '') :
+  'String is not in digits.';
 };
 
 String.prototype.numberWords = function () {
@@ -75,7 +74,7 @@ String.prototype.getMiddle = function () {
 };
 
 String.prototype.toCurrency = function () {
-  return this.replace(/(\d+)(?=\.)/g, function (v) {
+  return /^\d+(\.\d*)?$/g.test(this) ? this.replace(/(\d+)(?=\.)/g, function (v) {
     return v.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
-  });
+  }) : 'String is not in digits.';
 };
