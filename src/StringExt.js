@@ -1,5 +1,5 @@
 'use strict';
-var numberInWords = ['zero', 'one', 'two', 'three', 'four', 'five', 'six',
+let numberInWords = ['zero', 'one', 'two', 'three', 'four', 'five', 'six',
  'seven', 'eight', 'nine'];
 
 String.prototype.hasVowels = function () {
@@ -44,7 +44,7 @@ String.prototype.fromCurrency = function () {
 
 String.prototype.numberWords = function () {
   return this.replace(/\d/g, function (v) {
-    return numberInWords[parseInt(v)] + " ";
+    return numberInWords[parseInt(v)] + ' ';
   });
 };
 
@@ -72,4 +72,10 @@ String.prototype.getMiddle = function () {
   let total = this.length;
   return (total%2) === 0 ? this.charAt((total/2)-1) +
   this.charAt(total/2) : this.charAt(total/2);
+};
+
+String.prototype.toCurrency = function () {
+  return this.replace(/(\d+)(?=\.)/g, function (v) {
+    return v.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+  });
 };
