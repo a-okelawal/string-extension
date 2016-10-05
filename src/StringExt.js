@@ -64,10 +64,12 @@ String.prototype.isDigit = function () {
   return /^[\d{1}]$/.test(this);
 };
 
-String.prototype.isDigit = function () {
-  return /^[\d{1}]$/.test(this);
-};
-
 String.prototype.doubleCheck = function () {
   return /(.)\1/.test(this);
+};
+
+String.prototype.getMiddle = function () {
+  let total = this.length;
+  return (total%2) === 0 ? this.charAt((total/2)-1) +
+  this.charAt(total/2) : this.charAt(total/2);
 };
