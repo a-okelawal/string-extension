@@ -52,7 +52,7 @@ String.prototype.isQuestion = function () {
 //This function takes in a string and returns an array of the words in it
 String.prototype.words = function () {
   //The Regex pattern checks for anything that isn't a number or letter
-  return (this).replace(/[^a-zA-Z 0-9]/, '').split(' ');
+  return ((this).replace(/[^a-zA-Z]+/g, ' ').split(' ')).filter(Boolean);
 };
 
 //This function takes in a string and returns the number of words in it
