@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>String extension tests.</title>
+  </head>
+  <body>
+      <label>Text: </label><input type="text" id="text"><br><br>
+      <select name="extensions" id="opt">
+        <option value="0">hasVowels</option>
+        <option value="1">toUpper</option>
+        <option value="2">toLower</option>
+        <option value="3">ucFirst</option>
+        <option value="4">isQuestion</option>
+        <option value="5">words</option>
+        <option value="6">wordCount</option>
+        <option value="7">toCurrenct</option>
+        <option value="8">fromCurrency</option>
+        <option value="9">inverseCase</option>
+        <option value="10">alternatingCase</option>
+        <option value="11">getMiddle</option>
+        <option value="12">numberWords</option>
+        <option value="13">isDigit</option>
+        <option value="14">doubleCheck</option>
+      </select><br><br>
+      <label>output: </label><p id="ans"></p>
+      <input type="submit" id="submit" value="submit"/>
+    <script type="text/javascript" src="src/StringExt.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+    $(document).ready( function () {
+      $('#submit').click(function () {
+        switch(parseInt($('#opt').val())) {
+          case 0:
+            $('#ans').text(($('#text').val()).hasVowels());
+            break;
+          case 1:$('#ans').text(($('#text').val()).toUpper());
+          break;
+          case 2:$('#ans').text(($('#text').val()).toLower());
+          break;
+          case 3:$('#ans').text(($('#text').val()).ucFirst());
+          break;
+          case 4:$('#ans').text(($('#text').val()).isQuestion());
+          break;
+          case 5:$('#ans').text(($('#text').val()).words());
+          break;
+          case 6:$('#ans').text(($('#text').val()).wordCount());
+          break;
+          case 7:$('#ans').text(($('#text').val()).toCurrency());
+          break;
+          case 8:$('#ans').text(($('#text').val()).fromCurrency());
+          break;
+          case 9:$('#ans').text(($('#text').val()).inverseCase());
+          break;
+          case 10:$('#ans').text(($('#text').val()).alternatingCase());
+          break;
+          case 11:$('#ans').text(($('#text').val()).getMiddle());
+          break;
+          case 12:$('#ans').text(($('#text').val()).numberWords());
+          break;
+          case 13:$('#ans').text(($('#text').val()).isDigit());
+          break;
+          case 14:$('#ans').text(($('#text').val()).doubleCheck());
+          break;
+        }
+      });
+    });
+    </script>
+  </body>
+</html>
