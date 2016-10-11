@@ -1,4 +1,4 @@
-# inverted-index
+# String Extension
 This is a javascript library that extends the String class.
 
 ## Requirements
