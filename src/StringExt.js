@@ -46,7 +46,7 @@ String.prototype.isQuestion = function () {
   *The Regex pattern checks if there is only one question mark in the string
   *and then checks if it is at the right side/end
   */
-  return (/(^[^\?]*\?[^\?]*$)(?!\?$)/.test(this));
+  return /(^[^\?]*\?[^\?]*$)/g.test(this) ? /\?$/g.test(this) : 'Not a question.';
 };
 
 //This function takes in a string and returns an array of the words in it
