@@ -66,7 +66,7 @@ String.prototype.wordCount = function () {
 String.prototype.fromCurrency = function () {
   //The first Regex pattern checks for numbers and commas before the .
   //The second Regex pattern checks for characters that are not strings
-  return /^\d+(,*\d*\.*\d*)?$/g.test(this) ? this.replace(/[^\d\.]/, '') :
+  return /^\d+(\,*|\d*){0,}\.{0,1}\d*$/g.test(this) ? this.replace(/[^\d+.$]/g, '') :
   'String is not in digits.';
 };
 
