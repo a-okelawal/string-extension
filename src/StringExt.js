@@ -121,7 +121,7 @@ String.prototype.getMiddle = function () {
 String.prototype.toCurrency = function () {
   //The first and second Regex pattern checks for numbers before the '.'
   //The third checks for digits in 3's that are followed by another digit
-  return /^\d+(\.\d*)?$/g.test(this) ? this.replace(/(\d+)(?=\.*)/g, function (v) {
+  return /^\d+(\.\d*)?$/g.test(this) ? this.replace(/(\d+)(.)/, function (v) {
     return v.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
   }) : 'String is not in digits.';
 };
