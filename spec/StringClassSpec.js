@@ -54,8 +54,8 @@ describe ('toCurrency should', function () {
   it ('return a currency representation of string.', function () {
     expect('111111.11'.toCurrency()).toBe('111,111.11');
     expect('111111.1133'.toCurrency()).toBe('111,111.1133');
-    expect('1RF,!!!.11'.fromCurrency()).toEqual('String is not in digits.');
-    expect('111111.11FF'.toCurrency()).toBe('String is not in digits.');
+    expect('1RF,!!!.11'.fromCurrency()).toEqual('String does not contain only digits.');
+    expect('111111.11FF'.toCurrency()).toBe('String does not contain only digits.');
   });
 });
 
@@ -63,8 +63,8 @@ describe ('fromCurrency should', function () {
   it ('return a number representation of string.', function () {
     expect('111,111.11'.fromCurrency()).toEqual('111111.11');
     expect('111,111.1144'.fromCurrency()).toEqual('111111.1144');
-    expect('1RF,!!!.1144'.fromCurrency()).toEqual('String is not in digits.');
-    expect('1RF,!!!.11F44'.fromCurrency()).toEqual('String is not in digits.');
+    expect('1RF,!!!.1144'.fromCurrency()).toEqual('String does not contain only digits.');
+    expect('1RF,!!!.11F44'.fromCurrency()).toEqual('String does not contain only digits.');
   });
 });
 
